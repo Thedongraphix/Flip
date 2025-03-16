@@ -7,7 +7,6 @@ import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 import { FaFingerprint } from 'react-icons/fa';
 
 import Container from './Container';
-import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
 
 const Header: React.FC = () => {
