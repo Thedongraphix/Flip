@@ -1,10 +1,10 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnexi-launch%2Ffinwise-landing-page)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnexi-launch%2FFlip-landing-page)
 
-# Finwise - Next.js + Tailwind Landing Page Template
+# Flip - Next.js + Tailwind Landing Page Template
 
-Finwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It’s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
+Flip is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It’s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
 
-Try out the demo here: [https://finwise-omega.vercel.app](https://finwise-omega.vercel.app).
+Try out the demo here: [https://Flip-omega.vercel.app](https://Flip-omega.vercel.app).
 
 Please check out the documentation below to get started.
 
@@ -68,13 +68,13 @@ Before starting, make sure you have the following installed:
 
 ## Deploying on Vercel
 
-The fastest way to deploy Finwise is on [Vercel](https://vercel.com/). Simply click the "Deploy with Vercel" button at the top of this README, or check the [Next.js deployment docs](https://vercel.com/docs/deployments/deployment-methods) for other deployment options.
+The fastest way to deploy Flip is on [Vercel](https://vercel.com/). Simply click the "Deploy with Vercel" button at the top of this README, or check the [Next.js deployment docs](https://vercel.com/docs/deployments/deployment-methods) for other deployment options.
 
 ---
 
 ## Contributing
 
-Finwise is an open-source project, and we welcome contributions from the community! If you have ideas for new components, designs, layouts, or optimizations, please join us in making Finwise even better.
+Flip is an open-source project, and we welcome contributions from the community! If you have ideas for new components, designs, layouts, or optimizations, please join us in making Flip even better.
 
 ### How to Contribute
 

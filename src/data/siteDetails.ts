@@ -1,9 +1,9 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'Flip',
+    siteUrl: 'https://flip.com/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Flip',
+        description: 'Flip is a mobile app that allows you to easily manage your finances.',
     },
     language: 'en-us',
     locale: 'en-US',
