@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
-import { FaFingerprint } from 'react-icons/fa';
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
@@ -12,10 +12,16 @@ const Footer: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
                     <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
-                        <h3 className="space-grotesk text-xl font-semibold cursor-pointer">
+                        <Image 
+                            src="/images/logos/flip logo.png" 
+                            alt="Flip Logo" 
+                            width={50} 
+                            height={33} 
+                            className="min-w-fit"
+                        />
+                        {/*<h3 className="space-grotesk text-xl font-semibold cursor-pointer">
                             {siteDetails.siteName}
-                        </h3>
+                        </h3>*/}
                     </Link>
                     <p className="mt-3.5 text-foreground-accent">
                         {footerDetails.subheading}

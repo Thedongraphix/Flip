@@ -41,6 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Fonts are imported in globals.css */}
+        <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
       <body
         className="antialiased"

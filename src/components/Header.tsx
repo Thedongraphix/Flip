@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
-import { FaFingerprint } from 'react-icons/fa';
 
 import Container from './Container';
 import { menuItems } from '@/data/menuItems';
@@ -21,11 +21,14 @@ const Header: React.FC = () => {
             <Container className="!px-0">
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="text-foreground min-w-fit w-7 h-7" />
-                        <span className="space-grotesk text-xl font-semibold text-foreground cursor-pointer">
-                            flip
-                        </span>
+                    <Link href="/" className="flex items-center">
+                        <Image 
+                            src="/images/logos/flip logo.png" 
+                            alt="Flip Logo" 
+                            width={40} 
+                            height={40} 
+                            className="min-w-fit"
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -91,7 +94,12 @@ const Header: React.FC = () => {
                         ))}
                         <li>
                             <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Get Started
+                                Sign In
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
+                                Sign Up
                             </Link>
                         </li>
                     </ul>
