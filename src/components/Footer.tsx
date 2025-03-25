@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                         <Image 
                             src="/images/logos/flip logo.png" 
                             alt="Flip Logo" 
-                            width={50} 
+                            width={40} 
                             height={33} 
                             className="min-w-fit"
                         />
