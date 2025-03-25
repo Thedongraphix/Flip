@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
                             src="/images/logos/flip logo.png" 
                             alt="Flip Logo" 
                             width={40} 
-                            height={33} 
-                            className="min-w-fit"
+                            height={33}
+                            className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-[40px] lg:h-[40px] object-contain"
                         />
-                        <h3 className="space-grotesk text-xl font-semibold cursor-pointer">
+                        <h3 className="space-grotesk text-sm sm:text-base md:text-lg lg:text-xl font-semibold cursor-pointer">
                             {siteDetails.siteName}
                         </h3>
                     </Link>

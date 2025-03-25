@@ -26,8 +26,9 @@ const Header: React.FC = () => {
                             src="/images/logos/flip logo.png" 
                             alt="Flip Logo" 
                             width={40} 
-                            height={40} 
-                            className="min-w-fit"
+                            height={40}
+                            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-[40px] lg:h-[40px] object-contain"
+                            priority
                         />
                     </Link>
 
@@ -84,7 +85,16 @@ const Header: React.FC = () => {
                 leaveTo="opacity-0 scale-95"
             >
                 <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
+                    <div className="px-6 pt-4 pb-2 border-b border-gray-100">
+                        <Image 
+                            src="/images/logos/flip logo.png" 
+                            alt="Flip Logo" 
+                            width={32} 
+                            height={32}
+                            className="w-8 h-8 object-contain"
+                        />
+                    </div>
+                    <ul className="flex flex-col space-y-4 pt-4 pb-6 px-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
                                 <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
