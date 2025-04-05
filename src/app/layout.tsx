@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { siteDetails } from '@/data/siteDetails';
+import StyledComponentsRegistry from "./registry";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: siteDetails.metadata.title,
+  title: {
+    template: '%s | Flip',
+    default: siteDetails.metadata.title,
+  },
   description: siteDetails.metadata.description,
   openGraph: {
     title: siteDetails.metadata.title,
@@ -43,15 +45,11 @@ export default function RootLayout({
         {/* Fonts are imported in globals.css */}
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
-      <body
-        className="antialiased"
-      >
+      <body className="antialiased">
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
-        <Header />
-        <main>
+        <StyledComponentsRegistry>
           {children}
-        </main>
-        <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

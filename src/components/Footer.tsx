@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                                     return (
                                         <Link
                                             href={footerDetails.socials[platformName]}
-                                            key={platformName}
+                                            key={platformName} 
                                             aria-label={platformName}
                                         >
                                             {getPlatformIconByName(platformName)}
@@ -64,8 +64,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             <div className="mt-8 md:text-center text-foreground-accent px-6">
-            <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.</p>
-            
+            <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved</p>
             </div>
         </footer>
     );

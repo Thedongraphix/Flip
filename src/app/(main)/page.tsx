@@ -9,7 +9,7 @@ import Section from "@/components/Section";
 import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 
-const HomePage: React.FC = () => {
+export default function HomePage() {
   return (
     <>
       <Hero />
@@ -41,6 +41,4 @@ const HomePage: React.FC = () => {
       </Container>
     </>
   );
-};
-
-export default HomePage;
+} 
