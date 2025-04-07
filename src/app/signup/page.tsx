@@ -418,7 +418,7 @@ export default function SignupPage() {
                 </label>
               </div>
               
-              <button className="submit-button">Get Started</button>
+              <button className="submit-button">Get Started today</button>
               
               <p className="signin-link">
                 Already have an account? <Link href="/login" className="login-link">Sign In</Link>
