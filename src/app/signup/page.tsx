@@ -74,14 +74,24 @@ export default function SignupPage() {
     // If we're opening the dropdown, calculate position
     if (!showCountryList) {
       const rect = e.currentTarget.getBoundingClientRect();
-      setDropdownPosition({
-        top: rect.bottom + window.scrollY,
-        left: rect.left + window.scrollX
-      });
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // For mobile, position it in the center of the screen
+        setDropdownPosition({
+          top: rect.bottom + window.scrollY,
+          left: window.innerWidth / 2  // This will be adjusted with transform in CSS
+        });
+      } else {
+        // For desktop, position it under the clicked element
+        setDropdownPosition({
+          top: rect.bottom + window.scrollY,
+          left: rect.left + window.scrollX
+        });
+      }
     }
     
     setShowCountryList(!showCountryList);
-    console.log("Toggle dropdown:", !showCountryList); // Debug logging
   };
 
   const handleAccountTypeChange = (type: 'personal' | 'business') => {
@@ -611,6 +621,7 @@ const FormContainer = styled.div`
     font-size: 0.9rem;
     background-color: #fafafa;
     transition: all 0.2s;
+    padding-right: 3rem; /* Make space for the eye icon */
   }
   
   .password-toggle {
@@ -626,6 +637,7 @@ const FormContainer = styled.div`
     justify-content: center;
     color: #666;
     padding: 0.25rem;
+    z-index: 1; /* Ensure the button stays above the input */
   }
   
   .select-wrapper {
@@ -807,6 +819,11 @@ const FormContainer = styled.div`
     font-weight: 500;
   }
   
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
+  
   @media (max-width: 768px) {
     flex-direction: column-reverse;
     max-height: none;
@@ -824,9 +841,73 @@ const FormContainer = styled.div`
     .name-fields {
       grid-template-columns: 1fr;
     }
+  }
+  
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    margin: 0.5rem;
+    border-radius: 15px;
+    
+    .form-side {
+      padding: 1.25rem;
+    }
+    
+    .form-title {
+      font-size: 1.5rem;
+    }
+    
+    .form-subtitle {
+      font-size: 0.9rem;
+    }
+    
+    .field-group input, 
+    .field-group select,
+    .password-input-container input,
+    .phone-input,
+    .country-code,
+    .phone-input input {
+      height: 2.75rem;
+      font-size: 0.85rem;
+    }
+    
+    .type-option {
+      padding: 0.6rem 0.5rem;
+    }
+    
+    .option-label {
+      font-size: 0.8rem;
+    }
+    
+    .country-code {
+      min-width: 6.5rem;
+      padding: 0 0.75rem;
+    }
+    
+    .image-side {
+      height: 180px;
+    }
+    
+    .image-overlay {
+      padding: 1.5rem;
+    }
+    
+    .image-title {
+      font-size: 1.3rem;
+    }
     
     .country-list {
-      max-height: 160px;
+      width: 100%;
+      left: 0;
+    }
+  }
+  
+  /* Fix for country dropdown on mobile */
+  @media (max-width: 768px) {
+    .country-list-overlay .country-list {
+      width: 90%;
+      max-width: 300px;
+      left: 50% !important;
+      transform: translateX(-50%);
     }
   }
 `;
