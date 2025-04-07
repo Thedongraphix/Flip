@@ -414,7 +414,7 @@ export default function SignupPage() {
               <div className="terms-privacy">
                 <input type="checkbox" id="terms" />
                 <label htmlFor="terms">
-                  I agree to Flip&aposs <Link href="/terms" className="terms-link">Terms and Conditions</Link> and <Link href="/privacy" className="terms-link">Privacy Policy</Link>
+                  I agree to Flip &apos;s <Link href="/terms" className="terms-link">Terms and Conditions</Link> and <Link href="/privacy" className="terms-link">Privacy Policy</Link>
                 </label>
               </div>
               
