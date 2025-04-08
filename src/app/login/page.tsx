@@ -12,7 +12,7 @@ export default function LoginPage() {
       <div className="py-8 px-6">
         <Link href="/" className="flex items-center gap-2 w-fit">
           <Image 
-            src="/images/logos/flip logo.png" 
+            src="/images/logos/flip logo.png"
             alt="Flip Logo" 
             width={40} 
             height={40}
