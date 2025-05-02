@@ -1,4 +1,3 @@
-// src/app/api/kyc/start/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { createApplicant } from '@/utils/sumsub';
@@ -45,7 +44,7 @@ export async function POST(req: NextRequest) {
     }
     
     // Create SumSub applicant
-    const externalUserId = `user-${user.id}-${Date.now()}`;
+    const externalUserId = `user-${user.id}`;
     const applicant = await createApplicant(
       externalUserId,
       {

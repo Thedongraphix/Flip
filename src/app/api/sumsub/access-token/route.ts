@@ -1,3 +1,5 @@
+// src/app/api/sumsub/access-token/route.ts
+
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
@@ -67,20 +69,33 @@ async function generateAccessToken(applicantId: string, levelName: string) {
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    console.log("Received access token request:", body);
+    // Verify environment variables are set
+    if (!SUMSUB_APP_TOKEN || !SUMSUB_SECRET_KEY) {
+      console.error('Missing Sumsub API credentials');
+      return NextResponse.json({ 
+        error: 'API configuration missing' 
+      }, { status: 500 });
+    }
     
-    const { applicantId, levelName } = body;
+    // Parse request body
+    let body;
+    try {
+      body = await req.json();
+      console.log("Received access token request:", body);
+    } catch (e) {
+      return NextResponse.json({ 
+        error: 'Invalid JSON in request body' 
+      }, { status: 400 });
+    }
+    
+    const { applicantId, levelName = 'id-and-liveness' } = body;
     
     if (!applicantId) {
       return NextResponse.json({ error: 'Applicant ID is required' }, { status: 400 });
     }
     
     // Generate access token for SumSub SDK
-    const accessToken = await generateAccessToken(
-      applicantId, 
-      levelName || 'id-and-liveness' // Default to your valid level name
-    );
+    const accessToken = await generateAccessToken(applicantId, levelName);
     
     return NextResponse.json({ token: accessToken });
   } catch (error: any) {
