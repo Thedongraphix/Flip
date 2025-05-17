@@ -37,11 +37,11 @@ export async function POST(req: NextRequest) {
     if (!userId) {
       return NextResponse.json({ error: 'User ID is required' }, { status: 400 });
     }
-    
+      
     if (!userInfo) {
       return NextResponse.json({ error: 'User info is required' }, { status: 400 });
     }
-    
+     
     // Validate minimum required user info
     if (!userInfo.firstName || !userInfo.lastName) {
       return NextResponse.json({ 
